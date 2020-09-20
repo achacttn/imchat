@@ -5,11 +5,17 @@ import ChatClient from './chatclient/ChatClient'
 
 export default () => {
 
-    const [usernameSubmitted] = React.useState<Boolean>(false)
+    // prod: set username back to "" and submit state back to false
+    const [username, setUsername] = React.useState<string>("Scott");
+    const [usernameSubmitted, setUsernameSubmitted] = React.useState<boolean>(true);
+
+    const usernameSubmitHandler: () => void = () => {
+        setUsernameSubmitted(true)
+    };
 
     return (
         <div className="AppContainer">
-            {usernameSubmitted ? <ChatClient /> : <Prompt />}
+            {usernameSubmitted ? <ChatClient username={username} /> : <Prompt usernameHandler={setUsername} submitHandler={usernameSubmitHandler} />}
         </div>
     );
 };

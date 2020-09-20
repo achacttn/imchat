@@ -1,9 +1,15 @@
 import React from "react";
 
-export default () => {
+interface ChatClientProps {
+    username: string;
+}
+
+const ChatClient = ({ username }: ChatClientProps) => {
     return (
-        <>
-            Chat Client
-        </>
+        <div>
+            {username}
+        </div>
     )
 }
+
+export default ChatClient;
