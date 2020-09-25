@@ -19,6 +19,17 @@ const Prompt = ({ usernameHandler, submitHandler }: PromptProps) => {
 
     const [promptUsername, setPromptUsername] = React.useState<string>("")
 
+    const keyPressHandler = (event: React.KeyboardEvent<HTMLInputElement>) => {
+        let key = event.key;
+        if (key === "Enter") {
+            event.preventDefault();
+            if (promptUsername.length > 0) {
+                usernameHandler(promptUsername);
+                submitHandler();
+            }
+        }
+    }
+
     const inputHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
         setPromptUsername(e.target.value);
     }
@@ -38,6 +49,7 @@ const Prompt = ({ usernameHandler, submitHandler }: PromptProps) => {
                     name="username"
                     id=""
                     className={style.UsernameInput}
+                    onKeyPress={keyPressHandler}
                     onChange={inputHandler}
                     ref={inputRef}
                     tabIndex={1}

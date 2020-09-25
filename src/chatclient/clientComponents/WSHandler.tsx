@@ -1,12 +1,18 @@
 import React from "react";
 
-// interface WSHandlerProps {}
+interface WSHandlerProps {
+    username: string;
+}
 
-const WSHandler = () => {
+const WSHandler = ({ username }: WSHandlerProps) => {
 
     // React.useEffect(() => {
     //     console.log('=== WSHandler.tsx ===');
-    //     let ws = new WebSocket("wss://m0v4iuwr09.execute-api.ap-southeast-2.amazonaws.com/dev1");
+    //     console.log('Received username props: ', username);
+    // })
+    // React.useEffect(() => {
+    //     console.log('=== WSHandler.tsx ===');
+    //     let ws = new WebSocket(`wss://m0v4iuwr09.execute-api.ap-southeast-2.amazonaws.com/dev1?username=${username}`);
     //     ws.onopen = event => {
     //         console.log('Websocket open event: ', event);
     //     };

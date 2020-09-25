@@ -1,0 +1,12 @@
+.ChatWindowContainer {
+    width: 100%;
+    background-color: #151700;
+    /* padding: 12px; */
+}
+
+.ChatWindowContent {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    background-color: rgba(0,0,0,0.1)
+}

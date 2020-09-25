@@ -1,0 +1,13 @@
+.ChatMessageContainer {
+    margin: 4px 0px;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.Sender {
+    flex: 1 0 0;
+}
+
+.Msg {
+    flex: 11 0 0;
+}
